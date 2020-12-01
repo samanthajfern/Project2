@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <style>
+        body {
+            background-color: chocolate;
+            font-family: arial;
+            color: white;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            padding: 35px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search NYT BestSeller Books</h1>
+    <form action="" method="POST" name="sample">
+    {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        <h2>This is a small app that introduces you to new NYT vouched best-selling books!</h2>
+        <h4>Whats your name?</h4>
+        <p>First Name:
+            {{ form.first_name() }}
+        </p>
+        <p>Last Name:
+            {{ form.last_name() }}
+        </p>
+        <p>Select a random number to discover a new best selling book:
+            {{ form.option2() }}
+        </p>
+        <p>Would you like to know its reviews or its description? (remember, don't judge a book by its cover):
+            {{ form.option() }}
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+
+</body>
+</html>
